@@ -35,6 +35,10 @@ var twoSum = function(nums, target) {
   nums.forEach(i =>{
     if (i < target) {
       const rest = target - i;
+      if (rest === i) {
+        let nums_2 = [...nums];
+        console.log(nums_2);
+      }
       console.log('tenemos un numero para encontrar :', rest);
       const found = nums.indexOf(rest)
       const ind = nums.indexOf(i);
