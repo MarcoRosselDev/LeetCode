@@ -31,17 +31,18 @@ Output: [0,1] */
  * @return {number[]}
  */
 
-const twoSum = function (nums, target) {
+/* const twoSum = function (nums, target) {
   let objeto = [];
   let iteracion = 0
+  let nums_2 = [...nums];
   while (objeto.length < 2 || iteracion < nums.length) {
-    let nums_2 = [...nums];
     const extact = nums_2.splice(iteracion, iteracion + 1); // elimina y extrae
+    console.log('numero extarido =', extact);
     const rest = target - extact;
     if (rest > 0) {
       const find = nums_2.indexOf(rest);
       if (find >= 0) {
-        objeto.push(iteracion);
+        objeto.push(nums.indexOf(extact));
         objeto.push(find + 1);
         break;
       }
@@ -49,7 +50,7 @@ const twoSum = function (nums, target) {
     iteracion++;
   }
   return objeto;
-}
+} */
 
 /* var twoSum = function(nums, target) {
   let obj = []
@@ -72,6 +73,10 @@ const twoSum = function (nums, target) {
   return obj;
 }; */
 
-console.log(twoSum([3,3], 6));
+const twoSum = function (nums, target) {
+  
+}
+
 console.log(twoSum([3,2,4], 6));// [2, 2]
+console.log(twoSum([3,3], 6));
 //twoSum([2,7,11,15], 9);
