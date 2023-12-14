@@ -30,7 +30,28 @@ Output: [0,1] */
  * @param {number} target
  * @return {number[]}
  */
-var twoSum = function(nums, target) {
+
+const twoSum = function (nums, target) {
+  let objeto = [];
+  let iteracion = 0
+  while (objeto.length < 2 || iteracion < nums.length) {
+    let nums_2 = [...nums];
+    const extact = nums_2.splice(iteracion, iteracion + 1); // elimina y extrae
+    const rest = target - extact;
+    if (rest > 0) {
+      const find = nums_2.indexOf(rest);
+      if (find >= 0) {
+        objeto.push(iteracion);
+        objeto.push(find + 1);
+        break;
+      }
+    } 
+    iteracion++;
+  }
+  return objeto;
+}
+
+/* var twoSum = function(nums, target) {
   let obj = []
   nums.forEach(i =>{
     if (i < target) {
@@ -49,7 +70,8 @@ var twoSum = function(nums, target) {
     }
   })
   return obj;
-};
+}; */
 
 console.log(twoSum([3,3], 6));
+console.log(twoSum([3,2,4], 6));// [2, 2]
 //twoSum([2,7,11,15], 9);
