@@ -1,3 +1,7 @@
+//El método entries() retorna un nuevo objeto Array Iterator 
+// que contiene los pares clave/valor para cada índice de la 
+// matriz.
+
 const a = ['a', 'b', 'c'];
 const iterador = a.entries();
 console.log(iterador);//Object [Array Iterator] {}
