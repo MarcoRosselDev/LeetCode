@@ -73,10 +73,28 @@ Output: [0,1] */
   return obj;
 }; */
 
+/* cagazo 
 const twoSum = function (nums, target) {
-  
-}
+  let obj = [];
+  let iter = 0
+  while (obj.length < 2) {
+    const rest = target - nums[iter];
+    console.log(`numero a encontrar ${rest}, i = ${iter}`); 
+    const pregunta = nums.indexOf(rest, iter++);
+    console.log(`pregunta:${pregunta}`);
+    if (pregunta > 0) {
+      obj.push(iter);
+      obj.push(pregunta);
+      break;
+    } else{
+      iter++;
+      console.log('fracazo:' ,iter);
+    }
+  }
+  return obj
+} */
 
-console.log(twoSum([3,2,4], 6));// [2, 2]
-console.log(twoSum([3,3], 6));
+console.log(twoSum([2, 7, 11, 15], 9)); // [0,1]
+console.log(twoSum([3,2,4], 6));// [2, 2] // [1, 2]
+console.log(twoSum([3,3], 6)); // [0,1]
 //twoSum([2,7,11,15], 9);
