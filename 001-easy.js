@@ -31,69 +31,11 @@ Output: [0,1] */
  * @return {number[]}
  */
 
-/* const twoSum = function (nums, target) {
-  let objeto = [];
-  let iteracion = 0
-  let nums_2 = [...nums];
-  while (objeto.length < 2 || iteracion < nums.length) {
-    const extact = nums_2.splice(iteracion, iteracion + 1); // elimina y extrae
-    console.log('numero extarido =', extact);
-    const rest = target - extact;
-    if (rest > 0) {
-      const find = nums_2.indexOf(rest);
-      if (find >= 0) {
-        objeto.push(nums.indexOf(extact));
-        objeto.push(find + 1);
-        break;
-      }
-    } 
-    iteracion++;
-  }
-  return objeto;
-} */
-
-/* var twoSum = function(nums, target) {
-  let obj = []
-  nums.forEach(i =>{
-    if (i < target) {
-      const rest = target - i;
-      if (rest === i) {
-        let nums_2 = [...nums];
-        console.log(nums_2);
-      }
-      console.log('tenemos un numero para encontrar :', rest);
-      const found = nums.indexOf(rest)
-      const ind = nums.indexOf(i);
-      console.log(`Encontramos la posicion de ${rest}, esta en el indice :` ,found);
-      if (found > 0 && obj.length < 2) {
-        obj.push(ind, found)
-      }
-    }
-  })
-  return obj;
-}; */
-
-/* cagazo 
-const twoSum = function (nums, target) {
-  let obj = [];
-  let iter = 0
-  while (obj.length < 2) {
-    const rest = target - nums[iter];
-    console.log(`numero a encontrar ${rest}, i = ${iter}`); 
-    const pregunta = nums.indexOf(rest, iter++);
-    console.log(`pregunta:${pregunta}`);
-    if (pregunta > 0) {
-      obj.push(iter);
-      obj.push(pregunta);
-      break;
-    } else{
-      iter++;
-      console.log('fracazo:' ,iter);
-    }
-  }
-  return obj
-} */
-
+const twoSum = ( arr, target ) =>{
+  const rest = target - arr[0];
+  const a = arr.indexOf(rest, 1);
+  return [0, a]
+}
 console.log(twoSum([2, 7, 11, 15], 9)); // [0,1]
 console.log(twoSum([3,2,4], 6));// [2, 2] // [1, 2]
 console.log(twoSum([3,3], 6)); // [0,1]
