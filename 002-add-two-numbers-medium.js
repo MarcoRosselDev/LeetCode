@@ -31,17 +31,25 @@ It is guaranteed that the list represents a number that does not have leading ze
  *     this.next = (next===undefined ? null : next)
  * }
  */
+function ListNode(val, next) {
+  this.val = (val===undefined ? 0 : val)
+  this.next = (next===undefined ? null : next)
+}
+
 /**
  * @param {ListNode} l1
  * @param {ListNode} l2
  * @return {ListNode}
  */
 const addTwoNumbers = (l1, l2) => {
+  let resp = []
+  for (let index = 0; index < l1.length; index++) {
+    let a = ListNode(l1[index]);
+    console.log(a);
+    resp.push()
+  }
+  return resp
 
-  console.log(typeof(l1.reverse()));
-  console.log(typeof(l2.reverse()));
-  console.log(l1);
-  
   //const l1_reverse = Number(l1.reverse().join(''))
   //const l2_reverse = Number(l2.reverse().join(''))
   //const l2_reverse = l2.reverse().join('')
@@ -50,8 +58,8 @@ const addTwoNumbers = (l1, l2) => {
 };
 
 
-addTwoNumbers([2,4,3], [5,6,4]); // [7,0,8]
-//console.log(addTwoNumbers([2,4,3], [5,6,4])); // [7,0,8]
+//addTwoNumbers([2,4,3], [5,6,4]); // [7,0,8]
+console.log(addTwoNumbers([2,4,3], [5,6,4])); // [7,0,8]
 //console.log(addTwoNumbers([0], [0])); // [0]
 //console.log(addTwoNumbers([9,9,9,9,9,9,9], [9,9,9,9])); // [8,9,9,9,0,0,0,1]
 // solucion de la suma = 10.009.998, pero se almacena alreves
