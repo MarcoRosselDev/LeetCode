@@ -2,8 +2,9 @@ import { useRef } from 'react'
 import './App.css'
 import { gsap,  } from "gsap";
 import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { Props } from '../notes/props'
+import {States} from '../notes/state'
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -51,6 +52,11 @@ function App() {
   return (
     <>
       <Props name='marco' age={30}/>
+      <Props name='linda' age={31}>
+        <h1>Buenos dias Linda</h1>
+      </Props>
+
+      <States />
       <p>Hola mundo</p>
       <div ref={contenedor}>
         <div className='box-div box' ref={box}>
