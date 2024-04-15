@@ -1,4 +1,4 @@
-import  { useState } from 'react'
+import { useState } from 'react'
 import './event.css'
 
 export function Component() {
@@ -10,9 +10,13 @@ export function Component() {
     setEmail(e.target.value)
   }
 
+  function handleSubmit(e:React.FormEvent<HTMLFormElement>) {
+    e.preventDefault()
+  }
+
   return (
     <section className="section-form">
-      <form action="">
+      <form action="" onSubmit={handleSubmit}>
         <input type="text" onChange={(e) => setText(e.target.value)}/>
         <input type="email" onChange={handleEmail}/>
         <button>Enviar</button>
