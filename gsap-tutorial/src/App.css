@@ -24,3 +24,15 @@ body{
   justify-content: center;
   align-items: center;
 }
+
+.blue-box{
+  width: 100px;
+  height: 100px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: lightskyblue;
+  color: black;
+  border-radius: 5px;
+}
