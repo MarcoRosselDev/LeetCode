@@ -12,7 +12,7 @@ gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 function App() {
   //const box = useRef(null)
-  const blue_box = useRef(null)
+  //const blue_box = useRef(null)
   const contenedor = useRef(null)
   const state_elements = useRef(null)
   const form_elem = useRef(null)
@@ -20,7 +20,7 @@ function App() {
   useGSAP(() =>{
     //gsap.to(".box", { rotation: "+=360", duration: 3 })
     gsap.to(form_elem.current, { x: -200, duration: 3 })
-    gsap.to(blue_box.current, { x: 200 })
+    //gsap.to(blue_box.current, { x: 200 })
     gsap.to(state_elements.current, { x: 200, duration: 3 })
   }, {scope: contenedor})
   return (

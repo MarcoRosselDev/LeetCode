@@ -1,8 +1,9 @@
 import React, {createContext, useState} from 'react'
+import { Component } from './component'
 
-type Theme = string | React.SetStateAction
+type Theme = string | undefined
 
-const SomeContext = createContext<Theme>('ligth')
+export const SomeContext = createContext<Theme>('ligth')
 
 export function ThemeContext({children}:{children: React.ReactNode}) {
   const [theme, setTheme] = useState('light')
@@ -11,8 +12,10 @@ export function ThemeContext({children}:{children: React.ReactNode}) {
   }
 
   return (
-    <SomeContext.Provider value={theme} _handleTheme={handleTheme}>
+    <SomeContext.Provider value={theme} >
+      <Component handleTheme_f={handleTheme} />
       {children}
+
     </SomeContext.Provider>
   )
 }
