@@ -1,7 +1,7 @@
 import {useContext} from 'react'
 import { SomeContext } from './contexto'
 
-export function Component({handleTheme_f} : any) {
+export function Component({handleTheme_f} : {handleTheme_f: () => void}) {
   const theme = useContext(SomeContext)
   return (
     <div>
