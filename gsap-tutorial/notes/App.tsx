@@ -39,6 +39,12 @@ function App() {
             <States />
           </ThemeContext>
         </div>
+        {/* <div className='box-div box' ref={box}>
+          <p>Hola!</p>
+        </div>
+        <div ref={blue_box} className='blue-box'>
+          <p>blue!</p>
+        </div> */}
       </div>
     </>
   )
