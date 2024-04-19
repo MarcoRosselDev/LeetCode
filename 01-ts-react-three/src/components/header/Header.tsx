@@ -1,12 +1,11 @@
 import { useContext } from 'react'
 import './header.css'
 import { context } from '../../contexto/Context'
-/* import { Tema } from '../../contexto/Tema'
-import { useContext } from 'react' */
 
 export function Header() {
 
-  const {dark, handleDark} = useContext(context)
+  const {handleDark} = useContext(context)
+  
   return (
     <header>
       <nav>
@@ -16,7 +15,11 @@ export function Header() {
           <li>another</li>
           <li>cv</li>
         </ul>
-        <p onClick={handleDark}>purple mode</p>
+        <ul className='ul-estilo'>
+          <li onClick={() => handleDark('purple')}>purple mode</li>
+          <li onClick={() => handleDark('dark')}>dark mode</li>
+          <li onClick={() => handleDark('ligth')}>ligth mode</li>
+        </ul>
       </nav>
     </header>
   )
