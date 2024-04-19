@@ -1,0 +1,9 @@
+main{
+  border-left: 1px solid yellowgreen;
+  border-right: 1px solid yellowgreen;
+  max-width: 600px;
+  min-height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
