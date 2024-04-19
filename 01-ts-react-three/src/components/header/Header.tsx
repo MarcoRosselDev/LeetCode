@@ -1,13 +1,12 @@
+import { useContext } from 'react'
 import './header.css'
+import { context } from '../../contexto/Context'
 /* import { Tema } from '../../contexto/Tema'
 import { useContext } from 'react' */
 
 export function Header() {
 
-/*   const tema = useContext(Tema)
-  console.log(tema); */
-  
-
+  const {dark, handleDark} = useContext(context)
   return (
     <header>
       <nav>
@@ -17,7 +16,7 @@ export function Header() {
           <li>another</li>
           <li>cv</li>
         </ul>
-        <p>purple mode</p>
+        <p onClick={handleDark}>purple mode</p>
       </nav>
     </header>
   )
