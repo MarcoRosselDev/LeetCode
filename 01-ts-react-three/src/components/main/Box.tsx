@@ -1,10 +1,11 @@
 //import { createRoot } from 'react-dom/client'
+import * as THREE from 'three'
 import { useRef, useState } from 'react'
-import { useFrame } from '@react-three/fiber'
+import { useFrame, ThreeElements } from '@react-three/fiber'
 
-export function Box(props: any) {
+export function Box(props: ThreeElements['mesh']) {
   // This reference will give us direct access to the mesh
-  const meshRef = useRef<any>()
+  const meshRef = useRef<THREE.Mesh>(null!)
   // Set up state for the hovered and active state
   const [hovered, setHover] = useState(false)
   const [active, setActive] = useState(false)
