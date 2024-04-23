@@ -2,7 +2,7 @@
 import * as THREE from 'three'
 import { useRef, useState } from 'react'
 import { useFrame, ThreeElements } from '@react-three/fiber'
-import { Model } from '../../../Untitled'
+import { Model } from '../../../Habitacion'
 
 export function Box(props: ThreeElements['mesh']) {
     const meshRef = useRef<THREE.Mesh>(null!)

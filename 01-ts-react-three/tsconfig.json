@@ -20,6 +20,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src", "src/components/main/Untitled.jsx", "Untitled.tsx"],
+  "include": ["src", "src/components/main/Untitled.jsx", "Untitled.jsx"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
