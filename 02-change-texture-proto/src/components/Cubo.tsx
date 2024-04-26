@@ -1,13 +1,15 @@
 import * as THREE from 'three'
-import { useRef, useState } from 'react'
+import { useContext, useRef, useState } from 'react'
 import { useFrame, ThreeElements } from '@react-three/fiber'
+import { Contexto } from '../contexto/contextoGlobal'
 
 export function Cubo(props: ThreeElements['mesh']) {
-  
+
+  const {color} = useContext(Contexto)
   const meshRef = useRef<THREE.Mesh>(null!)
   const [hovered, setHover] = useState(false)
-
   const [active, setActive] = useState(false)
+
   useFrame((state, delta) => (meshRef.current.rotation.y += delta))
   return (
     <>
@@ -19,8 +21,8 @@ export function Cubo(props: ThreeElements['mesh']) {
         onPointerOver={() => setHover(true)}
         onPointerOut={() => setHover(false)}>
         <boxGeometry args={[1, 1, 1]} />
+        <meshStandardMaterial color={color} />
         {/* <meshStandardMaterial color={hovered ? 'hotpink' : 'orange'} /> */}
-        <meshStandardMaterial color={'lightblue'} />
       </mesh>
     </>
   )

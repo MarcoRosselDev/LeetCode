@@ -9,6 +9,7 @@ export function HandleContext({children}: {children: React.ReactNode}) {
   function cambiarColor(col:colorCubo):void{
     setColor(col)
   }
+  
   return (
     <Contexto.Provider value={{color, cambiarColor}}>
       {children}
