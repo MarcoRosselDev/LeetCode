@@ -2,7 +2,7 @@ import * as THREE from 'three'
 import { useRef, useState } from 'react'
 import { useFrame, ThreeElements } from '@react-three/fiber'
 
-export function Body(props: ThreeElements['mesh']) {
+export function Cubo(props: ThreeElements['mesh']) {
   
   const meshRef = useRef<THREE.Mesh>(null!)
   const [hovered, setHover] = useState(false)

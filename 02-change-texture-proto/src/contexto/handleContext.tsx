@@ -1,15 +1,16 @@
 import { useState } from 'react';
 import {Contexto} from './contextoGlobal'
+import { colorCubo } from '../type';
 
 export function HandleContext({children}: {children: React.ReactNode}) {
 
-  const [something, setSomething] = useState(true)
+  const [color, setColor] = useState<colorCubo>('orange')
 
-  function handleSomething():void{
-    setSomething(prev =>!prev)
+  function cambiarColor(col:colorCubo):void{
+    setColor(col)
   }
   return (
-    <Contexto.Provider value={{'hola':[12,1], something, handleSomething }}>
+    <Contexto.Provider value={{color, cambiarColor}}>
       {children}
     </Contexto.Provider>
   )

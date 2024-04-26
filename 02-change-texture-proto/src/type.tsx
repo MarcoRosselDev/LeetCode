@@ -1,0 +1,1 @@
+export type colorCubo = "red" | 'green' | 'lightblue' | 'orange'
