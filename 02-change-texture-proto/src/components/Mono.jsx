@@ -10,7 +10,9 @@ export function Model(props) {
   const { nodes, materials } = useGLTF('../../public/model/mono.glb')
   return (
     <group {...props} dispose={null}>
-      <mesh geometry={nodes.Suzanne.geometry} material={materials['Material.001']} />
+      <mesh geometry={nodes.Suzanne.geometry} material={materials['Material.001']} >  
+        <meshStandardMaterial color={'blue'} />
+      </mesh>
     </group>
   )
 }
