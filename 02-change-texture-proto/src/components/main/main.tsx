@@ -9,7 +9,6 @@ export function Main() {
 
   return (
     <>
-      {/* se vienen cositas */}
       <div className="botones-cambiar-color">
         <button onClick={() => cambiarColor('red')}>rojo</button>
         <button onClick={() => cambiarColor('green')}>verde</button>
