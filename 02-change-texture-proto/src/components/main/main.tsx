@@ -1,10 +1,11 @@
 import { useContext } from "react"
 import { MainCanvas } from "./mainCanvas"
 import { Contexto } from "../../contexto/contextoGlobal"
+import './main.css'
 
 export function Main() {
 
-  const {cambiarColor} = useContext(Contexto)
+  const {cambiarColor, setPosicion} = useContext(Contexto)
   //"red" | "green" | "lightblue" | "orange"
 
   return (
@@ -14,8 +15,11 @@ export function Main() {
         <button onClick={() => cambiarColor('green')}>verde</button>
         <button onClick={() => cambiarColor('lightblue')}>celeste</button>
         <button onClick={() => cambiarColor('orange')}>naranjo</button>
+        <button onClick={() => setPosicion([1.2, 1, 0])}>subir</button>
       </div>
-      <MainCanvas/>
+      <div className="div-canvas-main">
+        <MainCanvas/>
+      </div>
     </>
   )
 }
