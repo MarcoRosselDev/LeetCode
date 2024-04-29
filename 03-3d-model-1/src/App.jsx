@@ -5,8 +5,9 @@ function App() {
 
   return (
     <>
-      <p>HOLA</p>
-      <MainCanvas />
+      <div className='div-canvas'>
+        <MainCanvas />
+      </div>
     </>
   )
 }
