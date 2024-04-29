@@ -1,11 +1,11 @@
 import './App.css'
-import * as THREE from 'three'
-import { useRef, useState } from 'react'
+//import * as THREE from 'three'
+//import { useRef, useState } from 'react'
 import { Canvas, useFrame, ThreeElements } from '@react-three/fiber'
-import {Model} from '../Model.tsx'
+import { Model } from '../Model.jsx'
 import { OrbitControls } from '@react-three/drei'
 
-function Box(props: ThreeElements['mesh']) {
+/* function Box(props: ThreeElements['mesh']) {
   const meshRef = useRef<THREE.Mesh>(null!)
   const [hovered, setHover] = useState(false)
   const [active, setActive] = useState(false)
@@ -23,31 +23,17 @@ function Box(props: ThreeElements['mesh']) {
     </mesh>
   )
 }
-
-/* createRoot(document.getElementById('root')).render(
-  <Canvas>
-    <ambientLight intensity={Math.PI / 2} />
-    <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} decay={0} intensity={Math.PI} />
-    <pointLight position={[-10, -10, -10]} decay={0} intensity={Math.PI} />
-    <Box position={[-1.2, 0, 0]} />
-    <Box position={[1.2, 0, 0]} />
-  </Canvas>,
-) */
-
+ */
 function App() {
 
   return (
     <>
       <p>Hi</p>
       <Canvas>
-      <ambientLight intensity={Math.PI / 2} />
-      <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} decay={0} intensity={Math.PI} />
-      <OrbitControls />
-      <pointLight position={[-10, -10, -10]} decay={0} intensity={Math.PI} />
-        <Box position={[3, 0, 0]}/>
-        <Box position={[1, 0, 0]}/>
-        <Box position={[-1, 0, 0]}/>
-        <Box position={[-3, 0, 0]}/>
+        <ambientLight intensity={Math.PI / 2} />
+        <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} decay={0} intensity={Math.PI} />
+        <OrbitControls />
+        <pointLight position={[-10, -10, -10]} decay={0} intensity={Math.PI} />
         <Model />
       </Canvas>
     </>
