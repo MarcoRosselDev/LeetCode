@@ -9,7 +9,7 @@ export function MainCanvas() {
       {/* camera=nos ubica en la posicion inicial al cargar la pagina */}
 
       {/* ambientLight = luz ambiental, si no se aplica se ve todo negro, deve ir por defecto para ver colores y materiales */}
-      <ambientLight intensity={2.5} />
+      <ambientLight intensity={0.5} />
       {/* CameraControls = nos permite orbitar el objeto con el mouse */}
       <CameraControls makeDefault />
       <mesh castShadow receiveShadow>
@@ -34,7 +34,7 @@ export function MainCanvas() {
           <dodecahedronGeometry />
         </Side>
       </mesh>
-      <Model />
+      {/* <Model /> */}
     </Canvas>
   )
 }
