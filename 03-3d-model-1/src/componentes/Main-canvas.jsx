@@ -3,6 +3,7 @@ import { CameraControls, Edges } from '@react-three/drei'
 import {Side} from './Side'
 
 export function MainCanvas() {
+
   return (
     <Canvas shadows camera={{ position: [3, 1.5, -3] }}>
       {/* camera=nos ubica en la posicion inicial al cargar la pagina */}
