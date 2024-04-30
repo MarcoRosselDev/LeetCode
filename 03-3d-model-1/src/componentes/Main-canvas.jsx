@@ -1,17 +1,16 @@
 import {Canvas} from '@react-three/fiber'
 import { CameraControls, Edges } from '@react-three/drei'
-import {Model} from './Model'
 import {Side} from './Side'
 
 export function MainCanvas() {
   return (
-    <Canvas shadows camera={{ position: [-3, 2.5, 3] }}> 
+    <Canvas shadows camera={{ position: [3, 1.5, -3] }}>
       {/* camera=nos ubica en la posicion inicial al cargar la pagina */}
-
-      {/* ambientLight = luz ambiental, si no se aplica se ve todo negro, deve ir por defecto para ver colores y materiales */}
-      <ambientLight intensity={0.5} />
       {/* CameraControls = nos permite orbitar el objeto con el mouse */}
       <CameraControls makeDefault />
+      <ambientLight intensity={0.1} />
+      <directionalLight color="red" position={[0, 0, 5]} />
+      <directionalLight position={[5, 5, 5]} color="red" intensity={3}/>
       <mesh castShadow receiveShadow>
         <boxGeometry args={[2, 2, 2]} />
         <Edges />
@@ -27,14 +26,13 @@ export function MainCanvas() {
         <Side rotation={[0, Math.PI / 2, -Math.PI / 2]} bg="aquamarine" index={3}>
           <octahedronGeometry />
         </Side>
-        <Side rotation={[0, -Math.PI / 2, 0]} bg="indianred" index={4}>
+        <Side rotation={[0, -Math.PI / 2, 0]} bg="white" index={4}>
           <icosahedronGeometry />
         </Side>
-        <Side rotation={[0, Math.PI / 2, 0]} bg="hotpink" index={5}>
+        <Side rotation={[0, Math.PI / 2, 0]} bg="pink" index={5}>
           <dodecahedronGeometry />
         </Side>
       </mesh>
-      {/* <Model /> */}
     </Canvas>
   )
 }
