@@ -7,7 +7,8 @@ export function MainCanvas() {
   return (
     <Canvas shadows camera={{ position: [3, 1.5, -3] }}>
       <CameraControls makeDefault />
-      <pointLight position={[5, 5, 5]} intensity={3}/>
+      {/* <pointLight position={[5, 5, 5]} intensity={3}/> */}
+      {/* <pointLight position={[10, 10, 10]} intensity={3}/> */}
       {/* <ambientLight intensity={0.1} />
       <directionalLight color="red" position={[0, 0, 5]} />
       <directionalLight position={[0, 0, 7]} color="red" intensity={10}/> */}

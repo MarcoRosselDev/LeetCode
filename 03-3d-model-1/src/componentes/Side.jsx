@@ -12,6 +12,7 @@ export function Side({ rotation = [0, 0, 0], bg = '#f0f0f0', children, index }) 
     <MeshPortalMaterial attach={`material-${index}`}>
       {/** Everything in here is inside the portal and isolated from the canvas */}
       <ambientLight intensity={0.5} />
+      <pointLight position={[0.5,2,0]} intensity={3}/>
       <Environment preset="city" />
       <directionalLight color="white" position={[0, 0, 10]} />
       
