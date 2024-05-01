@@ -6,12 +6,11 @@ export function MainCanvas() {
 
   return (
     <Canvas shadows camera={{ position: [3, 1.5, -3] }}>
-      {/* camera=nos ubica en la posicion inicial al cargar la pagina */}
-      {/* CameraControls = nos permite orbitar el objeto con el mouse */}
       <CameraControls makeDefault />
-      <ambientLight intensity={0.1} />
+      <pointLight position={[5, 5, 5]} intensity={3}/>
+      {/* <ambientLight intensity={0.1} />
       <directionalLight color="red" position={[0, 0, 5]} />
-      <directionalLight position={[5, 5, 5]} color="red" intensity={3}/>
+      <directionalLight position={[0, 0, 7]} color="red" intensity={10}/> */}
       <mesh castShadow receiveShadow>
         <boxGeometry args={[2, 2, 2]} />
         <Edges />
@@ -27,10 +26,10 @@ export function MainCanvas() {
         <Side rotation={[0, Math.PI / 2, -Math.PI / 2]} bg="aquamarine" index={3}>
           <octahedronGeometry />
         </Side>
-        <Side rotation={[0, -Math.PI / 2, 0]} bg="white" index={4}>
+        <Side rotation={[0, -Math.PI / 2, 0]} bg="indianred" index={4}>
           <icosahedronGeometry />
         </Side>
-        <Side rotation={[0, Math.PI / 2, 0]} bg="pink" index={5}>
+        <Side rotation={[0, Math.PI / 2, 0]} bg="hotpink" index={5}>
           <dodecahedronGeometry />
         </Side>
       </mesh>
