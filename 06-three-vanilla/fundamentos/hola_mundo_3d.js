@@ -1,7 +1,7 @@
 console.log('hola');
 
 import * as THREE from 'three'
-//import './style.css'
+import './style.css'
 
 
 const canvas = document.querySelector('#c')
