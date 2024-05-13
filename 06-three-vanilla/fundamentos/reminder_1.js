@@ -1,4 +1,6 @@
 import * as THREE from 'three'
+import resizeRendererToDisplaySize from './resize'
+import './style.css'
 
 const canvas  = document.getElementById('c')
 
@@ -17,12 +19,16 @@ const luz = new THREE.AmbientLight()
 luz.position.set = [0,0,0] 
 escena.add(luz)
 
+
 function rotar_cubo(tiempo) {
   tiempo *= 0.001
   cubo_mesh.rotation.x = tiempo
   cubo_mesh.rotation.y = tiempo
 
+  camara.aspect = canvas.clientWidth / canvas.clientHeight;
+  camara.updateProjectionMatrix();
   renderer.render(escena, camara)
+  resizeRendererToDisplaySize(renderer)  
   requestAnimationFrame(rotar_cubo)
 }
 
