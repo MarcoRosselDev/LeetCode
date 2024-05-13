@@ -28,7 +28,8 @@ function rotar_cubo(tiempo) {
   camara.aspect = canvas.clientWidth / canvas.clientHeight;
   camara.updateProjectionMatrix();
   renderer.render(escena, camara)
-  resizeRendererToDisplaySize(renderer)  
+  resizeRendererToDisplaySize(renderer)// resize  
+  
   requestAnimationFrame(rotar_cubo)
 }
 
