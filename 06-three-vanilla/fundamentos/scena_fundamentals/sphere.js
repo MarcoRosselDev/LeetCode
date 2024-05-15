@@ -1,7 +1,7 @@
-import './style.css'
+import '../style.css'
 
 import * as THREE from 'three'
-import resizeRendererToDisplaySize from './resize.js'
+import resizeRendererToDisplaySize from '../resize.js'
 
 //const canvas = document.getElementById('c')
 const canvas  = document.getElementById('c')
