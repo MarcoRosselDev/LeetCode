@@ -27,8 +27,25 @@ sistema_solar.add(mesh_sol)
 // Tierra---------------------------------------------------------
 const material_tierra = new THREE.MeshPhongMaterial({emissive: 'blue'})
 const mesh_tierra = new THREE.Mesh(sphera, material_tierra)
-mesh_tierra.position.x = 10
+mesh_tierra.position.x = 9
 sistema_solar.add(mesh_tierra)
+// objeto 3d tierra---
+const sistema_tierra = new THREE.Object3D()
+sistema_tierra.position.x = 9
+sistema_solar.add(sistema_tierra)
+
+// luz desde el sol
+const color = 0xFFFFFF;
+const intensity = 20;
+const light = new THREE.PointLight(color, intensity);
+scene.add(light);
+
+// Luna-------------------------------------------------------------
+const material_luna = new THREE.MeshPhongMaterial({emissive: 'grey'})
+const mesh_luna = new THREE.Mesh(sphera, material_luna)
+mesh_luna.position.x = 3
+mesh_luna.scale.set(0.5, .5, .5)
+sistema_tierra.add(mesh_luna)
 
 scene.add(sistema_solar)
 
@@ -36,7 +53,9 @@ function frame(time) {
   const tiempo = time*0.001
   sistema_solar.rotation.y = tiempo
   mesh_tierra.rotation.y = tiempo
-  
+  sistema_tierra.rotation.y = tiempo
+  mesh_luna.rotation.y = tiempo
+
   // refrescar pixel aspect si se modifica el tamagnio de la pantalla
   camara.aspect = canvas.clientWidth / canvas.clientHeight;
   camara.updateProjectionMatrix();
