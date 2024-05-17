@@ -17,3 +17,9 @@ body canvas{
   width: 100%;
   height: 100%;
 }
+
+canvas{
+  background-color: greenyellow;
+  border: 1px solid pink;
+  color: pink;
+}
