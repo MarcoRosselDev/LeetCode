@@ -12,11 +12,12 @@ const luz = new THREE.AmbientLight('white', 30)
 scene.add(luz)
 
 const esfera = new THREE.SphereGeometry(2, 10, 10, 10)
-const mix = new THREE.MixOperation()
-const basic_material = THREE.MeshBasicMaterial({
+//const mix = new THREE.MixOperation()
+const basic_material = new THREE.MeshBasicMaterial({
   color: '#e17a7a', 
-  reflectivity: 0.5, 
-  combine: mix })
+  reflectivity: 0.5,
+  combine: THREE.MixOperation
+})
 const materia_2 = new THREE.Material({opacity: 1, alphaTest: 0.5, alphaHash: true, transparent: true})
 const mesh_basic_material = new THREE.Mesh(esfera, basic_material, materia_2)
 
