@@ -21,14 +21,15 @@ luz.position.z = 3
 luz.position.y = 6
 luz.position.x = 3
 // esfera
-const esfera = new THREE.SphereGeometry(1, 20, 20, 20)
+const esfera = new THREE.SphereGeometry(1, 30, 30, 30)
 // mesh basic material: se diferancia de phong material por que esta tiene rugosidad y metalidad
 const material_esfera_1 = new THREE.MeshPhysicalMaterial({
   color: 'lightblue', 
-  //roughness: .5,
-  //metalness: 1,
-  clearcoat: 1,
-  clearcoatRoughness: 0,
+  //roughness: .5, // que tan rugoso es el aspocto metalico
+  //metalness: 1, // esto es de basic material de 0 - 1, aspecto metalico
+  clearcoat: 1, // mas de basic material = capa transparente (como el seramico o el  barnis translusido)
+  clearcoatRoughness: 0, // que tan rugoso es esta capa tranparente
+  flatShading: true,// remarca la geometria
 })
 const mesh_esfera_1 = new THREE.Mesh(esfera, material_esfera_1)
 
