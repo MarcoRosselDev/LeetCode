@@ -23,10 +23,12 @@ luz.position.x = 3
 // esfera
 const esfera = new THREE.SphereGeometry(1, 20, 20, 20)
 // mesh basic material: se diferancia de phong material por que esta tiene rugosidad y metalidad
-const material_esfera_1 = new THREE.MeshStandardMaterial({
-  color: 'lightgreen', 
-  roughness: .5,
-  metalness: 1,
+const material_esfera_1 = new THREE.MeshPhysicalMaterial({
+  color: 'lightblue', 
+  //roughness: .5,
+  //metalness: 1,
+  clearcoat: 1,
+  clearcoatRoughness: 0,
 })
 const mesh_esfera_1 = new THREE.Mesh(esfera, material_esfera_1)
 
