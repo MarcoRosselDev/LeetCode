@@ -8,24 +8,36 @@ const renderer = new THREE.WebGLRenderer({canvas, antialias: true, alpha: true, 
 const scene = new THREE.Scene()
 const camara = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 30)
 camara.position.z = 4
-const luz = new THREE.DirectionalLight('white', 2)
-luz.position.x = 2
-luz.position.y = 2
-luz.position.z = 2
 //cubo
 const geometria_cubo = new THREE.BoxGeometry(1, 1, 1)
-//const material_cubo = new THREE.MeshStandardMaterial({color: 'lightblue', roughness: 0.5})
+// carga texturas
 const loader = new THREE.TextureLoader();
-const texture = loader.load( 'imgs/wall.jpg' );
-texture.colorSpace = THREE.SRGBColorSpace;
+//const texture = loader.load( 'imgs/wall.jpg' );
+//texture.colorSpace = THREE.SRGBColorSpace;
+const materiales = [
+  new THREE.MeshBasicMaterial({map: loadColorTexture('/imgs/1.jpg')}),
+  new THREE.MeshBasicMaterial({map: loadColorTexture('/imgs/2.jpg')}),
+  new THREE.MeshBasicMaterial({map: loadColorTexture('/imgs/3.jpg')}),
+  new THREE.MeshBasicMaterial({map: loadColorTexture('/imgs/4.jpg')}),
+  new THREE.MeshBasicMaterial({map: loadColorTexture('/imgs/5.jpg')}),
+  new THREE.MeshBasicMaterial({map: loadColorTexture('/imgs/6.jpg')}),
+];
 
-const material = new THREE.MeshPhongMaterial({
+function loadColorTexture(ruta) {
+  const texture = loader.load( ruta );
+  texture.colorSpace = THREE.SRGBColorSpace;
+  return texture;
+}
+
+/* const material = new THREE.MeshPhongMaterial({
   //color: 0xFF8844,
   map: texture,
-});
-const mesh_cubo = new THREE.Mesh(geometria_cubo, material)
+}); */
 
-scene.add(luz, mesh_cubo)
+//const material = new THREE.MeshBasicMaterial()
+const mesh_cubo = new THREE.Mesh(geometria_cubo, materiales)
+
+scene.add(mesh_cubo)
 
 function animation(time) {
   const tiempo = time*0.001
