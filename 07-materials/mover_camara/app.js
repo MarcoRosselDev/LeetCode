@@ -13,6 +13,27 @@ const box_m = new THREE.MeshBasicMaterial({color: 'lightgreen'})
 const mesh_box = new THREE.Mesh(box_g, box_m)
 scene.add(mesh_box)
 
+document.addEventListener('keydown', onKeyDown, false)
+
+function onKeyDown(event) {
+  let keycode = event.which
+  console.log(keycode);
+
+  if (keycode === 40) {
+    camera.translateZ(0.1)
+  } else if (keycode === 38) {
+    camera.translateZ(-0.1)
+  } else if (keycode === 37) {
+    camera.translateX(0.1)
+  } else if (keycode === 39) {
+    camera.translateX(-0.1)
+  }
+  //left 39
+  //right 37
+  // up 38
+  // down 40
+}
+
 function animation() {
 
   mesh_box.rotation.x += 0.01
