@@ -20,13 +20,13 @@ function onKeyDown(event) {
   console.log(keycode);
 
   if (keycode === 40) {
-    camera.translateZ(0.1)
+    camera.translateZ(0.05)
   } else if (keycode === 38) {
-    camera.translateZ(-0.1)
+    camera.translateZ(-0.05)
   } else if (keycode === 37) {
-    camera.translateX(0.1)
+    camera.translateX(0.05)
   } else if (keycode === 39) {
-    camera.translateX(-0.1)
+    camera.translateX(-0.05)
   }
   //left 39
   //right 37
