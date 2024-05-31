@@ -6,24 +6,30 @@ const canvas = document.getElementById('c')
 const renderer = new THREE.WebGLRenderer({canvas, antialias:true, alpha:false})
 const scene = new THREE.Scene()
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 30)
-camera.position.z = 4
-const ambiental_ligth = new THREE.AmbientLight('white', 3)
-const directional_light = new THREE.DirectionalLight('white', 10)
+camera.position.z = 20
+camera.position.y = 3
+const ambiental_ligth = new THREE.AmbientLight('white', 1)
+const directional_light = new THREE.DirectionalLight('white', 5)
 directional_light.position.set(3,5,0)
 
 const box_geo = new THREE.BoxGeometry(1,1,1)
 const box_material = new THREE.MeshPhongMaterial({color:'lightblue', shininess: 600})
 const box_mesh = new THREE.Mesh(box_geo, box_material)
+box_mesh.position.y = 0
 
 const pizo_geo = new THREE.BoxGeometry(10,10, 0.01)
-const loader = new THREE.TextureLoader();
-const texture = loader.load( 'public/imgs/1.jpg' );
-texture.colorSpace = THREE.SRGBColorSpace;
-const pizo_material = new THREE.MeshPhongMaterial({
-  map: texture,
-  shininess: 600,
-})
+const pizo_material = new THREE.MeshPhongMaterial({color: 'lightgreen', shininess: 450})
 const pizo_mesh = new THREE.Mesh(pizo_geo, pizo_material)
+pizo_mesh.rotation.x = Math.PI / 2
+pizo_mesh.position.y = -2
+//pizo_material.position.x = 2
+
+//paredes-----------------------------------------------------
+const pared_geo = new THREE.BoxGeometry(10, 5, 0.01)
+const pared_material = new THREE.MeshPhongMaterial({color: 'coral', shininess: 600})
+const pared_tracera = new THREE.Mesh(pared_geo, pared_material)
+pared_tracera.position.z = -5
+pared_tracera.position.y = 0
 
 document.addEventListener('keydown', mover_camera, false)
 
@@ -41,7 +47,12 @@ function mover_camera(target) {
   }
 }
 
-scene.add(ambiental_ligth, directional_light, box_mesh, pizo_mesh)
+scene.add(
+  ambiental_ligth, 
+  directional_light, 
+  box_mesh, pizo_mesh,
+  pared_tracera,
+)
 
 function animation() {
   renderer.render(scene, camera)
