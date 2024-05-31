@@ -15,6 +15,16 @@ const box_geo = new THREE.BoxGeometry(1,1,1)
 const box_material = new THREE.MeshPhongMaterial({color:'lightblue', shininess: 600})
 const box_mesh = new THREE.Mesh(box_geo, box_material)
 
+const pizo_geo = new THREE.BoxGeometry(10,10, 0.01)
+const loader = new THREE.TextureLoader();
+const texture = loader.load( 'public/imgs/1.jpg' );
+texture.colorSpace = THREE.SRGBColorSpace;
+const pizo_material = new THREE.MeshPhongMaterial({
+  map: texture,
+  shininess: 600,
+})
+const pizo_mesh = new THREE.Mesh(pizo_geo, pizo_material)
+
 document.addEventListener('keydown', mover_camera, false)
 
 function mover_camera(target) {
@@ -31,7 +41,7 @@ function mover_camera(target) {
   }
 }
 
-scene.add(ambiental_ligth, directional_light, box_mesh)
+scene.add(ambiental_ligth, directional_light, box_mesh, pizo_mesh)
 
 function animation() {
   renderer.render(scene, camera)
