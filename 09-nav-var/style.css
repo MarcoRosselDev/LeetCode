@@ -30,11 +30,38 @@
   text-align: center;
 }
 
+/* header section--------------------- */
 header{
   border: 5px solid blue;
+  /* display: inline; */
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
 }
 
+nav ul{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 400px;
+  gap: 5px;
+}
+
+li{
+  width: 100px;
+  list-style: none;
+  border: 1px solid grey;
+  border-radius: 5px;
+}
+
+li:hover{
+  background-color: #1a1a1a;
+  color: #535bf2;
+}
+
+/* header section--------------------- */
+/* main section--------------------- */
 main{
   border: 5px solid goldenrod;
   display: flex;
@@ -101,6 +128,18 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
+
+canvas{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -10;
+  border: 5px solid #535bf2;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* main section--------------------- */
 
 @media (prefers-color-scheme: light) {
   :root {

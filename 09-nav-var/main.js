@@ -7,7 +7,12 @@ console.log('marco rossel');
 document.getElementById('app').innerHTML = `
   <header>
     <nav>
-      <p>Hola amiguitos</p>
+      <ul>
+        <li>item A</li>
+        <li>item B</li>
+        <li>item C</li>
+        <li>item D</li>
+      </ul>
     </nav>
   </header>
   <main>
@@ -19,6 +24,7 @@ document.getElementById('app').innerHTML = `
         <button id="counter" type="button"></button>
       </div>
       <p class="read-the-docs">Click on the Vite logo to learn more</p>
+      <canvas id="c"></canvas>
     </div>
   </main>
   <footer>
