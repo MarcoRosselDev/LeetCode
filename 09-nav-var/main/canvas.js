@@ -29,7 +29,10 @@ const luz_ambiental = new THREE.AmbientLight('white', 2)
 const luz_direccional = new THREE.DirectionalLight('white', 1)
 luz_direccional.position.set(0,5,0)
 luz_direccional.castShadow = true // activar emisor de sombras de la luz direccional
+console.log(luz_direccional);
 const help_light = new THREE.DirectionalLightHelper(luz_direccional, 0.4,'blue')
+const help_camera_light = new THREE.CameraHelper(luz_direccional.shadow.camera)
+scene.add(help_camera_light)
 
 const pizo = new THREE.PlaneGeometry(10, 10)
 const material_pizo = new THREE.MeshPhysicalMaterial({
@@ -47,6 +50,7 @@ pizo_mesh.receiveShadow = true // activar el resivimiento de las sombras activas
 
 // nota: a considerar el rendimiento de la pagina si se activan muchas sombras
 // por eso vienen desactivadas por defecto, por su alto costo de calculo
+// x^n costo exponencial a la cantidad de objetos en scene
 
 scene.add(mesh, luz_ambiental, luz_direccional, pizo_mesh)
 scene.add(help_light)
