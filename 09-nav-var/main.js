@@ -3,18 +3,24 @@ import viteLogo from '/vite.svg'
 import javascriptLogo from './javascript.svg'
 import {cargar_nav} from './cargar_nav.js'
 
-console.log('marco rossel');
 document.getElementById('app').innerHTML = `
   <header>
     <nav>
       <ul>
-        <li>item A</li>
-        <li>item B</li>
-        <li>item C</li>
-        <li>item D</li>
+        <li class="item_a">item A</li>
+        <li class="item_b">item B</li>
+        <li class="item_c">item C</li>
+        <li class="item_d">item D</li>
       </ul>
     </nav>
-  </header>
+    <div class='div_sub'>
+      <p>sub item a</p>
+      <p>sub item a</p>
+      <p>sub item a</p>
+      <p>sub item a</p>
+      <p>sub item a</p>
+    </div>
+    </header>
   <main>
     <div>
       <a href="https://vitejs.dev" target="_blank"><img src="${viteLogo}" class="logo" alt="Vite logo" /></a>
@@ -32,6 +38,21 @@ document.getElementById('app').innerHTML = `
   </footer>
 `
 
-document.querySelector('nav')
+const item_a = document.querySelector('.item_a')
+item_a.addEventListener('mouseover', function (e) {
+  e.preventDefault()
+  console.log(e)
+  console.log('hover');
+})
+
+const div_sub = document.querySelector('.div_sub')
+div_sub.addEventListener('mouseout', function (e) {
+  e.preventDefault()
+  console.log(e)
+})
+/* item_a.addEventListener('mouseout', function (e) {
+  e.preventDefault()
+  console.log('out');
+}) */
 
 cargar_nav()
