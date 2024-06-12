@@ -12,14 +12,9 @@ document.getElementById('app').innerHTML = `
         <li class="item_c">item C</li>
         <li class="item_d">item D</li>
       </ul>
+      <div class='div_sub'>
+      </div>
     </nav>
-    <div class='div_sub'>
-      <p>sub item a</p>
-      <p>sub item a</p>
-      <p>sub item a</p>
-      <p>sub item a</p>
-      <p>sub item a</p>
-    </div>
     </header>
   <main>
     <div>
@@ -37,22 +32,4 @@ document.getElementById('app').innerHTML = `
     <p>Hola soy el footer</p>
   </footer>
 `
-
-const item_a = document.querySelector('.item_a')
-item_a.addEventListener('mouseover', function (e) {
-  e.preventDefault()
-  console.log(e)
-  console.log('hover');
-})
-
-const div_sub = document.querySelector('.div_sub')
-div_sub.addEventListener('mouseout', function (e) {
-  e.preventDefault()
-  console.log(e)
-})
-/* item_a.addEventListener('mouseout', function (e) {
-  e.preventDefault()
-  console.log('out');
-}) */
-
 cargar_nav()
