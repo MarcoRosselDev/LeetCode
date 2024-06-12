@@ -30,6 +30,12 @@
   text-align: center;
 }
 
+.padd{
+  padding: 10px;
+  max-width: 600px;
+  border: 1px solid #535bf2;
+}
+
 /* header section--------------------- */
 header{
   border: 5px solid blue;
