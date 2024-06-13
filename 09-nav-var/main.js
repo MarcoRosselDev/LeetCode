@@ -5,14 +5,20 @@ import javascriptLogo from './javascript.svg'
 
 document.getElementById('app').innerHTML = `
   <header>
-    <nav>
-      <ul>
-        <li class="item_a">item A</li>
-        <li class="item_b">item B</li>
-        <li class="item_c">item C</li>
-        <li class="item_d">item D</li>
+    <nav class="nav_header">
+      <ul class="ul_header">
+        <li class="needle">Needle</li>
+        <li class="needle_engine">Needle Engine</li>
+        <li class="get_started">Get Started</li>
+        <li class="showcase">Showcase</li>
+        <li class="pricing">Pricing</li>
+        <li class="company">Company</li>
       </ul>
-      <div class='div_sub'>
+      <div class='div_sub padd'>
+        <p><a href="http://marcorossel.com" target="_blank">marco rossel portfollio b</a></p>
+        <p><a href="http://youtube.com" target="_blank">youtube b</a></p>
+        <p>sub item b</p>
+        <p>sub item b</p>
       </div>
     </nav>
     </header>
