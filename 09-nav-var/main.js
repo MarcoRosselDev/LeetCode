@@ -1,7 +1,7 @@
 import './style.css'
 import viteLogo from '/vite.svg'
 import javascriptLogo from './javascript.svg'
-import {cargar_nav} from './cargar_nav.js'
+//import {cargar_nav} from './cargar_nav.js'
 
 document.getElementById('app').innerHTML = `
   <header>
@@ -32,4 +32,4 @@ document.getElementById('app').innerHTML = `
     <p>Hola soy el footer</p>
   </footer>
 `
-cargar_nav()
+//cargar_nav()
