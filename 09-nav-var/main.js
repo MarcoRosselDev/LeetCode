@@ -14,11 +14,21 @@ document.getElementById('app').innerHTML = `
         <li class="pricing">Pricing</li>
         <li class="company">Company</li>
       </ul>
-      <div class='div_sub padd'>
-        <p><a href="http://marcorossel.com" target="_blank">marco rossel portfollio b</a></p>
-        <p><a href="http://youtube.com" target="_blank">youtube b</a></p>
-        <p>sub item b</p>
-        <p>sub item b</p>
+      <div class='div_sub padd company'>
+        <div class="item_1">
+          <h4>About Neddle</h4>
+          <p>Needle is a technology company providing tools and integrations. We're interested in fast and flexible workflows, reducing friction, and providing tailor-made solutions to problems.</p>
+          <p><a href="">Imprint</a></p>  
+          <p><a href="">Privacy Policy</a></p>  
+        </div>
+        <div class="item_2">
+          <h4><a>Say hi!</a></h4>
+          <p><a>Newletter signup</a></p>
+        </div>
+        <div class="item_3">
+          <h4>Other Products</h4>
+          <p>Packages to improve the Unity Editor experience</p>
+        </div>
       </div>
     </nav>
     </header>
