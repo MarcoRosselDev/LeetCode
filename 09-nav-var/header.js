@@ -46,11 +46,27 @@ const company = document.querySelector('.company')
 company.addEventListener('mouseover', (e) => {
   e.preventDefault()
   div_sub.innerHTML = `
-  <p><a href="http://marcorossel.com" target="_blank">marco rossel portfollio d</a></p>
-  <p><a href="http://youtube.com" target="_blank">youtube d</a></p>
-  <p>sub item d</p>
+  <div class="item_1">
+          <h4>About Neddle</h4>
+          <p>Needle is a technology company providing tools and integrations. We're interested in fast and flexible workflows, reducing friction, and providing tailor-made solutions to problems.</p>
+          <p><a href="">Imprint</a></p>  
+          <p><a href="">Privacy Policy</a></p>  
+        </div>
+        <div class="item_2">
+          <h4><a>Say hi!</a></h4>
+          <p><a>Newletter signup</a></p>
+          <p><a>Twitter</a></p>
+          <p><a>Discord community</a></p>
+          <p><a>GitHub</a></p>
+          <p><a>Send us an e-mail</a></p>
+        </div>
+        <div class="item_3">
+          <h4>Other Products</h4>
+          <p>Packages to improve the Unity Editor experience</p>
+        </div>
   `
   div_sub.classList.add('padd')
+  div_sub.classList.add('company')
 })
 
 const needle = document.querySelector('.needle')
@@ -60,9 +76,11 @@ needle.addEventListener('mouseover', (e) => {
   e.preventDefault()
   div_sub.innerHTML = ``
   div_sub.classList.remove('padd')
+  div_sub.classList.remove('company')
 })
 showcase.addEventListener('mouseover', (e) => {
   e.preventDefault()
   div_sub.innerHTML = ``
   div_sub.classList.remove('padd')
+  div_sub.classList.remove('company')
 })
