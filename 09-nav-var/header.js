@@ -55,26 +55,32 @@ company.addEventListener('mouseover', (e) => {
   e.preventDefault()
   div_sub.innerHTML = `
   <div class="item_1">
-          <h4>About Neddle</h4>
-          <p>Needle is a technology company providing tools and integrations. We're interested in fast and flexible workflows, reducing friction, and providing tailor-made solutions to problems.</p>
-          <p><a href="">Imprint</a></p>  
-          <p><a href="">Privacy Policy</a></p>  
-        </div>
-        <div class="item_2">
-          <h4><a>Say hi!</a></h4>
-          <p><a href="">Newletter signup</a></p>
-          <p><a href="">Twitter</a></p>
-          <p><a href="">Discord community</a></p>
-          <p><a href="">GitHub</a></p>
-          <p><a href="">Send us an e-mail</a></p>
-        </div>
-        <div class="item_3">
-          <h4>Other Products</h4>
-          <p>Packages to improve the Unity Editor experience</p>
-        </div>
+    <h4>About Neddle</h4>
+    <p>Needle is a technology company providing tools and integrations. We're interested in fast and flexible workflows, reducing friction, and providing tailor-made solutions to problems.</p>
+    <p><a href="">Imprint</a></p>  
+    <p><a href="">Privacy Policy</a></p>  
+  </div>
+  <div class="item_2">
+    <h4><a>Say hi!</a></h4>
+    <p><a href="">Newletter signup</a></p>
+    <p><a href="">Twitter</a></p>
+    <p><a href="">Discord community</a></p>
+    <p><a href="">GitHub</a></p>
+    <p><a href="">Send us an e-mail</a></p>
+  </div>
+  <div class="item_3">
+    <h4>Other Products</h4>
+    <p>Packages to improve the Unity Editor experience</p>
+  </div>
   `
   div_sub.classList.add('padd')
   div_sub.classList.add('company')
+})
+
+pricing.addEventListener('mouseout', (e) => {
+  e.preventDefault()
+  console.log('mouseout');
+  div_sub.classList.remove('company')
 })
 
 const needle = document.querySelector('.needle')
