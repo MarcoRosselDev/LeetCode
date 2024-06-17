@@ -14,18 +14,8 @@ document.getElementById('app').innerHTML = `
         <li class="pricing">Pricing</li>
         <li class="company">Company</li>
       </ul>
-      <div class='div_sub padd pricing'>
-        <div class="item_1">
-          <h4>Free vs. Commercial</h4>
-          <p>Needle Engine and Integrations can be evaluated for free. Please see our commercial plans below for more information</p>
-          <button class="purple-button">See Commercial Plans</button>
-        </div>
-        <div class="item_2">
-          <h4>More Info</h4>
-          <p>The Small Print</p>
-          <p><a href="">License and Terms</a></p>
-          <p><a href="">Pricing</a></p>
-        </div>
+      <div class='div_sub'>
+        
       </div>
     </nav>
     </header>
