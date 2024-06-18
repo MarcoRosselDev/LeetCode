@@ -77,3 +77,14 @@ function animation() {
 }
 
 animation()
+
+
+/* Tarea para la casa:
+
+Buscar el ayudador de la luz direccional que enmarca el perimetro,
+la idea es ver su limite para que las sombras no queden cortadas,
+la esfera verde que representa a la luna en el sistema solar se ve cortada en siertas partes,
+si vemos y logramos manipular el perimetro de la luz direccional
+podemos evitar estos cortes de sombra,
+por el momento setie la altura para que no se corte al subir.
+*/
