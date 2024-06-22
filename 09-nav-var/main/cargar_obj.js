@@ -15,6 +15,10 @@ objLoader.load('/models/windmill_001.obj', (root) => {
   //root.rotation.x += 0.005
 });
 
+// vamos a tratar de cargar un OBJ con sus respectivos materiales desde blender
+// luego cargar otro tipos de objetos
+// luego tratar de cambiar sus propiedades o colores a traves de los eventos de js
+
 const canvas = document.getElementById('c')
 const renderer = new THREE.WebGLRenderer({canvas, alpha: true, antialias: true})
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 30)
