@@ -1,6 +1,7 @@
 import * as THREE from 'three'
 import resizeRendererToDisplaySize from '../main/resize.js'
 import {OBJLoader} from 'three/addons/loaders/OBJLoader.js';
+import {MTLLoader} from 'three/addons/loaders/MTLLoader.js';
 
 const canvas = document.getElementById('c')
 const renderer = new THREE.WebGLRenderer({canvas, antialias: true, alpha: true})
@@ -11,18 +12,37 @@ const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHei
 camera.position.z = 8
 //camera.position.y = 2
 const luz_ambiental = new THREE.AmbientLight(0xffffff, 0.5)
-const luz_direccional = new THREE.DirectionalLight(0xffffff, 1)
+const luz_direccional = new THREE.DirectionalLight(0xffffff, 2)
 luz_direccional.position.set(1,3,2)
 luz_direccional.castShadow = true
 luz_ambiental.position.set(2,2,2)
 /* const luz_direccional_helper = new THREE.DirectionalLightHelper(luz_direccional, undefined, 'blue')
 scene.add(luz_direccional_helper) */
+const mtlLoader = new MTLLoader();
 const objLoader = new OBJLoader();
-objLoader.load('models/windmill_001.obj', (root) => {
-  root.position.y = -1.5
-  root.scale.set(0.5,0.5,0.5)
-  scene.add(root);
+mtlLoader.load('models/windmill_001.mtl', (mtl) => {
+  mtl.preload();
+  objLoader.setMaterials(mtl);
+  objLoader.load('models/windmill_001.obj', (root) => {
+    root.position.y = -1.5
+    root.scale.set(0.5,0.5,0.5)
+    scene.add(root);
+
+    function animation() {
+
+      root.rotation.y += 0.005
+
+      renderer.render(scene, camera)
+      resizeRendererToDisplaySize(renderer)
+      requestAnimationFrame(animation)
+    }
+    
+    animation()
+  });
 });
+/* objLoader.load('models/windmill_001.obj', (root) => {
+  scene.add(root);
+}); */
 
 const loader = new THREE.TextureLoader();
 
