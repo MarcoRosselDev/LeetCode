@@ -1,5 +1,6 @@
 import * as THREE from 'three'
 import resizeRendererToDisplaySize from '../main/resize.js'
+import {OBJLoader} from 'three/addons/loaders/OBJLoader.js';
 
 const canvas = document.getElementById('c')
 const renderer = new THREE.WebGLRenderer({canvas, antialias: true, alpha: true})
@@ -16,14 +17,14 @@ luz_direccional.castShadow = true
 luz_ambiental.position.set(2,2,2)
 /* const luz_direccional_helper = new THREE.DirectionalLightHelper(luz_direccional, undefined, 'blue')
 scene.add(luz_direccional_helper) */
-const loader = new THREE.TextureLoader();
-const texture = loader.load( 'images/5.jpg' );
-texture.colorSpace = THREE.SRGBColorSpace;
+const objLoader = new OBJLoader();
+objLoader.load('models/windmill_001.obj', (root) => {
+  root.position.y = -1.5
+  root.scale.set(0.5,0.5,0.5)
+  scene.add(root);
+});
 
-const cube_geo = new THREE.BoxGeometry()
-const cube_mat = new THREE.MeshPhongMaterial({
-  map: texture,
-})
+const loader = new THREE.TextureLoader();
 
 function loadColorTexture( path ) {
   const texture = loader.load( path );
@@ -31,20 +32,17 @@ function loadColorTexture( path ) {
   return texture;
 }
 
-const cube_mesh = new THREE.Mesh(cube_geo, cube_mat)
-cube_mesh.castShadow = true
-
 scene.add(
   luz_ambiental,
   luz_direccional,
-  cube_mesh,
 )
 
 /* ahora agreagare unos planos para proyectar practicar el uso de sombras */
-const plano_base = new THREE.PlaneGeometry(10,10)
+const plano_base = new THREE.PlaneGeometry(10,10, 10, 10)
 const plano_material = new THREE.MeshPhongMaterial({
   map: loadColorTexture('images/floor.jpg'),
 })
+console.log('hola');
 const plano_mesh = new THREE.Mesh(plano_base, plano_material)
 plano_mesh.rotation.x = -Math.PI/2
 plano_mesh.position.y = -1.8
@@ -55,8 +53,6 @@ scene.add(
 )
 
 function animation() {
-  cube_mesh.rotation.x += 0.005
-  cube_mesh.rotation.y += 0.005
 
   renderer.render(scene, camera)
   resizeRendererToDisplaySize(renderer)
